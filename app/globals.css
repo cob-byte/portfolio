@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-lightHover: #fcf4ff;
+  --color-darkHover: #2a004a;
+  --color-darkTheme: #11001f;
+
+  --font-Outfit: Outfit, sans-serif;
+  --font-Ovo: Ovo, serif;
+
+  --shadow-black: 4px 4px 0 #000;
+  --shadow-white: 4px 4px 0 #fff;
+
+  --my-grid-cols:repeat(auto-fit,minmax(200px,1fr))
+}
+
+ body{
+  font-family: Outfit;
+}
+
+/* Light mode adaptation of your original styling */
+.hover {
+    transition: all 0.3s ease;
+}
+
+.hover:hover {
+    transform: scale(1.1);
+    background-color: #e2e8f0; /* Light mode equivalent of var(--color-eye) */
+    color: #1a202c; /* Dark text for light mode */
+    font-weight: bold;
+}
+
+.hover:hover .rot {
+    animation: rotate .5s ease-in-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: scaleX(1) scale(1);
+    }
+
+    50% {
+        transform: scaleX(-1) scale(1.6);
+    }
+
+    100% {
+        transform: scaleX(1) scale(1);
+    }
+}
+
+.micro-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.micro-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #4a5568; /* Light mode text color */
+    background-color: #f7fafc; /* Light background */
+    border: 2px solid #e2e8f0; /* Light border */
+    width: 12rem;
+    height: 12rem;
+    padding: 1.6rem 2.4rem;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.micro-cards.skill-cards {
+    gap: 1.2rem; /* Reduced gap between cards */
+}
+
+.micro-card.skill-card {
+    width: 7.2rem; /* Reduced from 9.6rem to 7.2rem (72px) */
+    height: 7.2rem; /* Reduced from 9.6rem to 7.2rem (72px) */
+    padding: 1rem; /* Reduced padding */
+}
+
+.micro-card.skill-card span {
+    font-size: 1rem; /* Reduced font size from 1.2rem */
+    margin-top: 0.6rem; /* Reduced margin */
+    color: #2d3748; /* Darker text for skill names */
+    text-align: center;
+}
+
+.micro-card.skill-card img {
+    width: 32px !important; /* Reduced icon size from 40px to 32px */
+    height: 32px !important;
+}
+
+.skill-card {
+    color: #4a5568; /* Light mode text color */
+}
+
+/* Keep your existing card styles for other components */
+.cards {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+}
+
+.card {
+    max-height: 16rem;
+    width: 32rem;
+    margin: 2px;
+    background-color: var(--color-gray);
+    padding: 0.8rem 0.8rem 1.6rem 0.8rem;
+    border-radius: 1.6rem;
+}
+
+.card-thumbnail {
+    width: 30.4rem;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 0.8rem;
+}
+
+.card-body {
+    padding: 0 0.8rem;
+}
+
+.card-title {
+    font-size: 2.1rem;
+    color: rgb(0, 183, 255);
+}
+
+.card-desc {
+    color: var(--color-eye);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card-footer {
+    margin-top: 1.6rem;
+    align-items: center;
+    bottom: 0;
+    position: relative;
+}
+
+.card-tag {
+    font-size: 1.3rem;
+    color: var(--color-green);
+    border: 2px solid var(--color-green);
+    border-radius: 1.6rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.card-tag-private {
+    font-size: 1.3rem;
+    color: var(--color-red);
+    border: 2px solid var(--color-red);
+    border-radius: 1.6rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.project-link {
+    color: var(--color-white);
+    gap: 0.8rem;
+}
+
+.micro-card.link-card {
+    transition: all 300ms ease-in-out;
+}
+
+.micro-card.link-card:hover {
+    color: var(--color-dark);
+    background-color: var(--color-eye);
+}
