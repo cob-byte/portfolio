@@ -5,7 +5,7 @@ import { ReactTyped } from "react-typed";
 
 const Header = () => {
   return (
-      <div className="flex flex-col items-center justify-center text-center max-w-3xl w-11/12 gap-4 mx-auto h-[calc(100vh-4rem)]">  
+      <div className="flex flex-col items-center justify-center text-center max-w-3xl w-11/12 gap-4 mx-auto mb-10">  
       <Image
         src={assets.profile_img}
         alt="profile_img"
@@ -60,7 +60,7 @@ const Header = () => {
         </a>
         
         <a
-          href="/sample-resume.pdf"
+          href="/Barcelona-Resume.pdf"
           download
           className="flex items-center gap-2 px-10 py-3 border rounded-full border-gray-500 hover:bg-gray-100 transition-colors"
         >

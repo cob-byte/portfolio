@@ -1,3 +1,4 @@
+// Import all your images
 import user_image from './user-image.png';
 import code_icon from './code-icon.png';
 import code_icon_dark from './code-icon-dark.png';
@@ -35,6 +36,42 @@ import send_icon from './send-icon.png';
 import right_arrow_bold from './right-arrow-bold.png';
 import right_arrow_bold_dark from './right-arrow-bold-dark.png';
 import placeholder from './placeholder.png';
+
+// Project Images
+import attendance_main from './attendance.png';
+import attendance_0 from './attendance-0.png';
+import attendance_1 from './attendance-1.png';
+import attendance_2 from './attendance-2.png';
+
+import classifier_main from './classifier.png';
+
+import fam_money_main from './fam-money.png';
+import fam_money_0 from './fam-money-0.png';
+import fam_money_1 from './fam-money-1.png';
+
+import imai_main from './imai.png';
+import imai_0 from './imai-0.png';
+import imai_1 from './imai-1.png';
+
+import ims_main from './ims.png';
+import ims_0 from './ims-0.png';
+import ims_1 from './ims-1.png';
+import ims_2 from './ims-2.png';
+
+import iplm_main from './iplm.png';
+import iplm_0 from './iplm-0.png';
+import iplm_1 from './iplm-1.png';
+import iplm_2 from './iplm-2.png';
+
+import mediqs_main from './mediqs.png';
+import mediqs_0 from './mediqs-0.png';
+
+import recom_main from './recom.jpg';
+import recom_0 from './recom-0.jpg';
+import recom_1 from './recom-1.jpg';
+import recom_2 from './recom-2.jpg';
+import recom_3 from './recom-3.jpg';
+import recom_4 from './recom-4.jpg';
 
 export const assets = {
     user_image,
@@ -74,6 +111,42 @@ export const assets = {
     right_arrow_bold,
     right_arrow_bold_dark,
     placeholder
+};
+
+// Project Images Object for easy access
+export const projectImages = {
+    attendance: {
+        main: attendance_main,
+        gallery: [attendance_0, attendance_1, attendance_2]
+    },
+    classifier: {
+        main: classifier_main,
+        gallery: []
+    },
+    famMoney: {
+        main: fam_money_main,
+        gallery: [fam_money_0, fam_money_1]
+    },
+    imai: {
+        main: imai_main,
+        gallery: [imai_0, imai_1]
+    },
+    ims: {
+        main: ims_main,
+        gallery: [ims_0, ims_1, ims_2]
+    },
+    iplm: {
+        main: iplm_main,
+        gallery: [iplm_0, iplm_1, iplm_2]
+    },
+    mediqs: {
+        main: mediqs_main,
+        gallery: [mediqs_0]
+    },
+    recom: {
+        main: recom_main,
+        gallery: [recom_0, recom_1, recom_2, recom_3, recom_4]
+    }
 };
 
 export const workData = [
@@ -209,67 +282,204 @@ export const skillsData = [
     },
 ];
 
-// Portfolio data
+// Portfolio data with corrected image references
 export const projects = [
   {
     id: 1,
-    title: "E-commerce Website",
-    description: "A full-stack e-commerce platform built with React and Node.js",
-    image: assets.placeholder.src || assets.placeholder,
-    skills: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Mediqs - Healthcare Management System",
+    description: "Revolutionizing healthcare management in primary healthcare facilities through a web-based electronic medical record portal system with predictive analytics for disease outbreaks. Built to improve accessibility, efficiency, and accuracy of patient information while streamlining healthcare workflows.",
+    image: projectImages.mediqs.main,
+    gallery: projectImages.mediqs.gallery,
+    skills: ["Django", "JavaScript", "Bootstrap", "Jupyter Notebook", "PostgreSQL", "Predictive Analytics"],
     links: [
       {
         id: 1,
         title: "Live Demo",
-        link: "https://example.com",
+        link: "https://mediqs-demo.up.railway.app",
         icon: "FaExternalLinkAlt"
       },
       {
         id: 2,
         title: "GitHub",
-        link: "https://github.com/username/project",
+        link: "https://github.com/cob-byte/Mediqs-Public",
         icon: "FaGithub"
       }
     ]
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates",
-    image: assets.placeholder.src || assets.placeholder,
-    skills: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
+    title: "Family Money Tracker",
+    description: "A comprehensive financial management system designed to help track and manage family finances. Features include expense tracking, budget management, financial reports, and multi-member support to ensure no transaction is forgotten and every penny is accounted for.",
+    image: projectImages.famMoney.main,
+    gallery: projectImages.famMoney.gallery,
+    skills: ["React", "Node.js", "MongoDB", "Chart.js", "Railway"],
     links: [
       {
         id: 1,
         title: "Live Demo",
-        link: "https://example.com",
+        link: "https://my-family-tracker.up.railway.app",
         icon: "FaExternalLinkAlt"
       },
       {
         id: 2,
         title: "GitHub",
-        link: "https://github.com/username/project",
+        link: "https://github.com/cob-byte/FamMoneyTracker",
         icon: "FaGithub"
       }
     ]
-  }
-];
-
-export const components = [
-  {
-    id: 1,
-    title: "Weather Widget",
-    description: "A beautiful weather component with animations",
-    image: assets.placeholder.src || assets.placeholder,
-    codeLink: "https://github.com/username/weather-widget",
-    viewLink: "https://weather-widget-demo.com"
   },
   {
-    id: 2,
-    title: "Custom Button Library",
-    description: "A collection of reusable button components",
-    image: assets.placeholder.src || assets.placeholder,
-    codeLink: "https://github.com/username/button-library",
-    viewLink: "https://button-library-demo.com"
+    id: 3,
+    title: "iPLM - Integrated PLM System",
+    description: "A comprehensive educational management system designed for administrators, faculty, students, and applicants. Built with passion to provide a flexible, beginner-friendly, and convenient platform that digitizes decades of physical processes, encouraging technology adoption in education.",
+    image: projectImages.iplm.main,
+    gallery: projectImages.iplm.gallery,
+    skills: ["Full Stack", "Educational Technology", "User Experience", "System Integration"],
+    links: [
+      {
+        id: 1,
+        title: "Project Demo",
+        link: "https://github.com/yourusername/iplm",
+        icon: "FaExternalLinkAlt"
+      },
+      {
+        id: 2,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/iPLM-Public",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "ReCom - Community Communication App",
+    description: "A sector-based mobile application for barangay communities featuring user accounts, community consensus, voting systems, virtual transactions for barangay facilities, 'pasuyo' services for physically absent members, and emergency institution access for community safety.",
+    image: projectImages.recom.main,
+    gallery: projectImages.recom.gallery,
+    skills: ["React Native", "Mobile Development", "Community Tech", "Real-time Communication"],
+    links: [
+      {
+        id: 1,
+        title: "Mobile App",
+        link: "https://github.com/yourusername/recom",
+        icon: "FaMobile"
+      },
+      {
+        id: 2,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/Recom",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "IMS Payroll Mobile",
+    description: "Mobile payroll application for IMS Philippines Maritime Corp seafarers. Features include viewing deductions, payroll details, notifications, contributions, remittances, and comprehensive allottee management with percentage or fixed amount allocation options.",
+    image: projectImages.ims.main,
+    gallery: projectImages.ims.gallery,
+    skills: ["React Native", "Mobile Development", "Payroll Systems", "Maritime Industry"],
+    links: [
+      {
+        id: 1,
+        title: "Mobile App",
+        link: "",
+        icon: "FaMobile"
+      },
+      {
+        id: 2,
+        title: "GitHub",
+        link: "",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "School Attendance Management System",
+    description: "Web-based attendance tracking system with role-based access for administrators and students. Features face detection for photo validation, comprehensive dashboards, JWT authentication, email notifications, and data backup/recovery capabilities.",
+    image: projectImages.attendance.main,
+    gallery: projectImages.attendance.gallery,
+    skills: ["Django", "React", "PostgreSQL", "Face Detection", "JWT", "Tailwind CSS"],
+    links: [
+      {
+        id: 1,
+        title: "Live Demo",
+        link: "",
+        icon: "FaExternalLinkAlt"
+      },
+      {
+        id: 2,
+        title: "Details",
+        link: "",
+        icon: "FaInfoCircle"
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "IMAI Cart Mobile Application",
+    description: "Connected mobile companion app for the IM.AI Cart Tablet Application. Built with React Native and Expo for seamless integration, featuring Node.js backend for real-time data syncing across tablet and mobile platforms.",
+    image: projectImages.imai.main,
+    gallery: projectImages.imai.gallery,
+    skills: ["React Native", "Expo", "Node.js", "Real-time Sync", "Cross-platform"],
+    links: [
+      {
+        id: 1,
+        title: "Mobile App",
+        link: "",
+        icon: "FaMobile"
+      },
+      {
+        id: 2,
+        title: "Details",
+        link: "",
+        icon: "FaInfoCircle"
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: "IMAI Cart Classifier System",
+    description: "Robust product identification system using OCR, color, texture, and feature matching. FastAPI-based interface for image upload, dataset management, and real-time classification via barcode detection. Includes GUI for dataset collection and model training.",
+    image: projectImages.classifier.main,
+    gallery: projectImages.classifier.gallery,
+    skills: ["Python", "FastAPI", "Computer Vision", "Machine Learning", "LightGlue", "OCR"],
+    links: [
+      {
+        id: 1,
+        title: "API Demo",
+        link: "",
+        icon: "FaServer"
+      },
+      {
+        id: 2,
+        title: "Details",
+        link: "",
+        icon: "FaInfoCircle"
+      }
+    ]
+  },
+  {
+    id: 9,
+    title: "IM.AI Cart Tablet Application",
+    description: "My first project lead at Linoflap Technology Philippines Inc. Designed and developed a tablet application using PyQt Designer and PyCharm, built with Python and Flask in an Anaconda environment. This foundational project combines intuitive design with robust backend functionality.",
+    image: projectImages.imai.main, // Using same image as mobile version
+    gallery: projectImages.imai.gallery,
+    skills: ["Python", "Flask", "PyQt", "Anaconda", "Tablet Development"],
+    links: [
+      {
+        id: 1,
+        title: "Tablet App",
+        link: "",
+        icon: "FaTablet"
+      },
+      {
+        id: 2,
+        title: "Details",
+        link: "",
+        icon: "FaInfoCircle"
+      }
+    ]
   }
 ];

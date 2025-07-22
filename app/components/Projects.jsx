@@ -1,6 +1,8 @@
-import React from "react";
-import { projects, components } from "@/assets/assets";
+import React, { useState } from "react";
+import { projects } from "@/assets/assets";
 import * as Icons from "react-icons/fa";
+import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
 
 const Projects = () => {
   return (
@@ -17,60 +19,181 @@ const Projects = () => {
       
       {/* Main Projects */}
       <div className="flex flex-col gap-12 lg:gap-20 w-full mt-8">
-        {projects
-          .slice(0)
-          .reverse()
-          .map((project, index) => (
-            <CardProject key={project.id} index={index} {...project} />
-          ))}
-      </div>
-      
-      {/* Component Projects */}
-      <div className="flex flex-col w-full">
-        <aside className="pt-12 lg:pt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {components.map((props) => (
-            <ComponentProject key={props.id} {...props} />
-          ))}
-        </aside>
+        {projects.map((project, index) => (
+          <CardProject key={project.id} index={index} {...project} />
+        ))}
       </div>
     </section>
   );
 };
 
 const CardProject = (props) => {
+  const [showGallery, setShowGallery] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Create full gallery with main image first, filtering out undefined/null images
+  const fullGallery = [props.image, ...(props.gallery || [])].filter(Boolean);
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? fullGallery.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === fullGallery.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') setShowGallery(false);
+    if (e.key === 'ArrowLeft') handlePrevImage();
+    if (e.key === 'ArrowRight') handleNextImage();
+  };
+
   return (
-    <article
-      className={`group bg-white shadow-lg rounded-2xl p-4 sm:p-6 lg:p-8 text-center flex flex-col gap-6 lg:gap-8 
-        md:flex-row md:text-left hover:shadow-xl transition-all duration-300 hover:-translate-y-1
-        ${props.index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-    >
-      <div className="w-full md:w-1/2 flex-shrink-0">
-        <img
-          src={`${props.image}`}
-          alt={props.title}
-          className="w-full rounded-2xl lg:rounded-3xl shadow-lg h-48 sm:h-60 lg:h-80 object-cover 
-            group-hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <h3 className="text-xl sm:text-2xl font-bold mb-3 lg:mb-4 group-hover:text-blue-600 transition-colors duration-300">
-          {props.title}
-        </h3>
-        <p className="text-gray-600 mb-4 lg:mb-6 text-sm sm:text-base leading-relaxed">
-          {props.description}
-        </p>
-        <div className="w-full flex flex-row flex-wrap gap-2 mb-6 lg:mb-8 justify-center md:justify-start">
-          {props.skills.map((skill) => (
-            <CardSkill key={skill} name={skill} />
-          ))}
+    <>
+      <article
+        className={`group bg-white shadow-lg rounded-2xl p-4 sm:p-6 lg:p-8 text-center flex flex-col gap-6 lg:gap-8 
+          md:flex-row md:text-left hover:shadow-xl transition-all duration-300 hover:-translate-y-1
+          ${props.index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+      >
+        <div className="w-full md:w-1/2 flex-shrink-0">
+          <div 
+            className="relative cursor-pointer"
+            onClick={() => setShowGallery(true)}
+          >
+            <div className="relative w-full h-48 sm:h-60 lg:h-80 overflow-hidden rounded-2xl lg:rounded-3xl shadow-lg group-hover:scale-105 transition-transform duration-300">
+              <Image
+                src={props.image}
+                alt={props.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-20 
+              transition-all duration-300 rounded-2xl lg:rounded-3xl flex items-center justify-center">
+              <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+                bg-black bg-opacity-50 px-4 py-2 rounded-lg flex items-center gap-2">
+                <Icons.FaImages /> View Gallery
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-row flex-wrap justify-center md:justify-start gap-4 lg:gap-8">
-          {props.links.map((link) => (
-            <CardLink key={link.id} {...link} />
-          ))}
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 lg:mb-4 group-hover:text-blue-600 transition-colors duration-300">
+            {props.title}
+          </h3>
+          <p className="text-gray-600 mb-4 lg:mb-6 text-sm sm:text-base leading-relaxed">
+            {props.description}
+          </p>
+          <div className="w-full flex flex-row flex-wrap gap-2 mb-6 lg:mb-8 justify-center md:justify-start">
+            {props.skills.map((skill) => (
+              <CardSkill key={skill} name={skill} />
+            ))}
+          </div>
+          <div className="flex flex-row flex-wrap justify-center md:justify-start gap-4 lg:gap-8">
+            {props.links.map((link) => (
+              <CardLink key={link.id} {...link} />
+            ))}
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+
+      {/* Image Gallery Modal */}
+      {showGallery && fullGallery.length > 0 && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowGallery(false)}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+        >
+          <div className="relative max-w-6xl w-full h-full flex flex-col">
+            {/* Close button */}
+            <button 
+              onClick={() => setShowGallery(false)}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+            >
+              <FaTimes size={24} />
+            </button>
+
+            {/* Image counter */}
+            <div className="text-white text-center mb-4">
+              {currentImageIndex + 1} / {fullGallery.length}
+            </div>
+
+            {/* Main image display */}
+            <div className="flex-1 flex items-center justify-center relative">
+              <div className="relative w-full h-full">
+                <Image 
+                  src={fullGallery[currentImageIndex]}
+                  alt={`${props.title} - Image ${currentImageIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                  sizes="100vw"
+                />
+              </div>
+
+              {/* Navigation buttons */}
+              {fullGallery.length > 1 && (
+                <>
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handlePrevImage();
+                    }}
+                    className="absolute left-4 text-white hover:text-gray-300 transition-colors 
+                      bg-black bg-opacity-50 p-3 rounded-full"
+                  >
+                    <FaChevronLeft size={24} />
+                  </button>
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNextImage();
+                    }}
+                    className="absolute right-4 text-white hover:text-gray-300 transition-colors 
+                      bg-black bg-opacity-50 p-3 rounded-full"
+                  >
+                    <FaChevronRight size={24} />
+                  </button>
+                </>
+              )}
+            </div>
+
+            {/* Thumbnail strip */}
+            {fullGallery.length > 1 && (
+              <div className="flex gap-2 justify-center mt-4 overflow-x-auto p-2">
+                {fullGallery.map((img, index) => (
+                  <div 
+                    key={index}
+                    className={`relative w-20 h-20 overflow-hidden rounded cursor-pointer transition-all duration-200
+                      ${index === currentImageIndex 
+                        ? 'ring-2 ring-white scale-110' 
+                        : 'opacity-70 hover:opacity-100'}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex(index);
+                    }}
+                  >
+                    <Image 
+                      src={img}
+                      alt={`Thumbnail ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="80px"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
@@ -84,63 +207,24 @@ const CardSkill = (props) => {
 
 const CardLink = (props) => {
   const IconComponent = Icons[props.icon];
+  
+  // Don't render if no link is provided
+  if (!props.link || props.link === "") {
+    return null;
+  }
+  
   return (
-    <>
-      {props.link !== "" && (
-        <div>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={props.link}
-            className="text-sm sm:text-base flex items-center justify-center text-black no-underline gap-1 sm:gap-2 
-              py-2 px-3 rounded-lg transition-all duration-300 hover:text-blue-600 hover:bg-blue-50 hover:scale-105"
-          >
-            {props.title} <IconComponent size="1.2rem" className="sm:w-8 sm:h-8" />
-          </a>
-        </div>
-      )}
-    </>
-  );
-};
-
-const ComponentProject = (props) => {
-  return (
-    <article className="group bg-white rounded-2xl lg:rounded-3xl overflow-hidden p-3 sm:p-4 shadow-lg 
-      hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
-      <div className="overflow-hidden rounded-xl lg:rounded-2xl">
-        <img
-          src={`${props.image}`}
-          alt={props.title}
-          className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-        />
-      </div>
-      <h2 className="text-lg sm:text-xl font-bold mt-3 sm:mt-4 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-        {props.title}
-      </h2>
-      <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed">
-        {props.description}
-      </p>
-      <div className="flex gap-2">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={props.codeLink}
-          className="flex-1 text-center py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg no-underline bg-gray-100 text-black 
-            transition-all duration-300 ease-in-out hover:scale-105 hover:text-white hover:bg-blue-600 text-xs sm:text-sm font-medium"
-        >
-          Code
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href={props.viewLink}
-          className="flex-1 text-center py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg no-underline bg-gray-100 text-black 
-            transition-all duration-300 ease-in-out hover:scale-105 hover:text-white hover:bg-blue-600 text-xs sm:text-sm font-medium"
-        >
-          View
-        </a>
-      </div>
-    </article>
+    <div>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={props.link}
+        className="text-sm sm:text-base flex items-center justify-center text-black no-underline gap-1 sm:gap-2 
+          py-2 px-3 rounded-lg transition-all duration-300 hover:text-blue-600 hover:bg-blue-50 hover:scale-105"
+      >
+        {props.title} <IconComponent size="1.2rem" className="sm:w-8 sm:h-8" />
+      </a>
+    </div>
   );
 };
 

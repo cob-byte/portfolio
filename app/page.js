@@ -10,13 +10,16 @@ import Projects from "./components/Projects";
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Header/>
-    <About/>
-    <Services/>
-    <Projects/>
-    <Contact/>
-    <Footer/>
+      <Navbar/>
+      {/* Add a main wrapper with padding-top to account for fixed navbar */}
+      <main className="pt-24"> {/* Adjust this value based on your navbar height */}
+        <Header/>
+        <About/>
+        <Services/>
+        <Projects/>
+        <Contact/>
+        <Footer/>
+      </main>
     </>
   );
 }
