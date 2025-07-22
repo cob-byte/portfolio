@@ -65,6 +65,9 @@ import iplm_2 from './iplm-2.png';
 
 import mediqs_main from './mediqs.png';
 import mediqs_0 from './mediqs-0.png';
+import mediqs_1 from './mediqs-1.png';
+import mediqs_2 from './mediqs-2.png';
+import mediqs_3 from './mediqs-3.png';
 
 import recom_main from './recom.jpg';
 import recom_0 from './recom-0.jpg';
@@ -141,7 +144,7 @@ export const projectImages = {
     },
     mediqs: {
         main: mediqs_main,
-        gallery: [mediqs_0]
+        gallery: [mediqs_0, mediqs_1, mediqs_2, mediqs_3]
     },
     recom: {
         main: recom_main,
