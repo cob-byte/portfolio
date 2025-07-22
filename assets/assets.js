@@ -342,7 +342,7 @@ export const projects = [
       {
         id: 1,
         title: "Project Demo",
-        link: "https://github.com/yourusername/iplm",
+        link: "https://iplm-demo.up.railway.app/",
         icon: "FaExternalLinkAlt"
       },
       {
@@ -364,7 +364,7 @@ export const projects = [
       {
         id: 1,
         title: "Mobile App",
-        link: "https://github.com/yourusername/recom",
+        link: "",
         icon: "FaMobile"
       },
       {
