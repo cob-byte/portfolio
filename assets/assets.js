@@ -315,7 +315,7 @@ export const projects = [
     description: "A comprehensive financial management system designed to help track and manage family finances. Features include expense tracking, budget management, financial reports, and multi-member support to ensure no transaction is forgotten and every penny is accounted for.",
     image: projectImages.famMoney.main,
     gallery: projectImages.famMoney.gallery,
-    skills: ["React", "Node.js", "MongoDB", "Chart.js", "Railway"],
+    skills: ["React", "Node.js", "Firebase Auth", "Firebase Realtime Database", "Railway"],
     links: [
       {
         id: 1,
