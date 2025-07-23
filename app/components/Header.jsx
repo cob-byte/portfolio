@@ -58,6 +58,14 @@ const Header = () => {
           Contact Me{" "}
           <Image src={assets.right_arrow_white} alt="arrow" className="w-4" />
         </a>
+        
+        <a
+          href="/Barcelona-Resume.pdf"
+          download
+          className="flex items-center gap-2 px-10 py-3 border rounded-full border-gray-500 hover:bg-gray-100 transition-colors"
+        >
+          My Resume <Image src={assets.download_icon} alt="download" className="w-4" />
+        </a>
       </div>
     </div>
   );
