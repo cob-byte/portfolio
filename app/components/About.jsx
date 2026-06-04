@@ -43,17 +43,16 @@ const About = () => {
           <div className="flex flex-col">
             <div className="mb-10 max-w-2xl font-Ovo space-y-6 mx-auto lg:mx-0 text-sm sm:text-base md:text-lg">
               <p>
-                I'm a <strong>Software Engineer</strong>, 
-                specializing in Web and Mobile Development. As a recent graduate from 
-                <strong> Pamantasan ng Lungsod ng Maynila</strong>, I transform innovative ideas into 
-                tangible solutions through research, development, and implementation.
+                I'm a <strong>Software Engineer</strong> with <strong>2+ years of experience</strong> specializing in
+                Mobile and Web Development. A graduate of <strong>Pamantasan ng Lungsod ng Maynila</strong>,
+                I transform innovative ideas into tangible solutions through research, development, and implementation.
               </p>
-              
+
               <p>
-                My expertise spans <strong>Web and Mobile Development</strong>, 
-                and <strong>Computer Vision</strong>. I've built facial recognition systems, smart shopping 
-                solutions, and gesture-controlled applications. I'm passionate about crafting dreams into 
-                code while fostering collaborative environments where innovation thrives.
+                My expertise spans <strong>React Native</strong>, <strong>full-stack Web Development</strong>,
+                and <strong>Computer Vision</strong>. I've shipped production apps across industries — from field
+                collection and QR ordering systems to healthcare portals and ML-powered classifiers — always focused
+                on delivering real-world impact through clean, scalable code.
               </p>
               
               <p>

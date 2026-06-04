@@ -1,80 +1,88 @@
-// Import all your images
-import user_image from './user-image.png';
-import code_icon from './code-icon.png';
-import code_icon_dark from './code-icon-dark.png';
-import edu_icon from './edu-icon.png';
-import edu_icon_dark from './edu-icon-dark.png';
-import project_icon from './project-icon.png';
-import project_icon_dark from './project-icon-dark.png';
-import vscode from './vscode.png';
-import firebase from './firebase.png';
-import figma from './figma.png';
-import git from './git.png';
-import mongodb from './mongodb.png';
-import right_arrow_white from './right-arrow-white.png';
-import logo from './logo.png';
-import logo_dark from './logo_dark.png';
-import mail_icon from './mail_icon.png';
-import mail_icon_dark from './mail_icon_dark.png';
-import profile_img from './profile-img.png';
-import download_icon from './download-icon.png';
-import hand_icon from './hand-icon.png';
-import header_bg_color from './header-bg-color.png';
-import moon_icon from './moon_icon.png';
-import sun_icon from './sun_icon.png';
-import arrow_icon from './arrow-icon.png';
-import arrow_icon_dark from './arrow-icon-dark.png';
-import menu_black from './menu-black.png';
-import menu_white from './menu-white.png';
-import close_black from './close-black.png';
-import close_white from './close-white.png';
-import web_icon from './web-icon.png';
-import mobile_icon from './mobile-icon.png';
-import python_icon from './python-icon.png';
-import right_arrow from './right-arrow.png';
-import send_icon from './send-icon.png';
-import right_arrow_bold from './right-arrow-bold.png';
-import right_arrow_bold_dark from './right-arrow-bold-dark.png';
-import placeholder from './placeholder.png';
+// --- Brand ---
+import logo from './brand/logo.png';
+import logo_dark from './brand/logo_dark.png';
+import header_bg_color from './brand/header-bg-color.png';
 
-// Project Images
-import attendance_main from './attendance.png';
-import attendance_0 from './attendance-0.png';
-import attendance_1 from './attendance-1.png';
-import attendance_2 from './attendance-2.png';
+// --- Profile ---
+import user_image from './profile/user-image.png';
+import profile_img from './profile/profile-img.png';
 
-import classifier_main from './classifier.png';
+// --- Icons ---
+import code_icon from './icons/code-icon.png';
+import code_icon_dark from './icons/code-icon-dark.png';
+import edu_icon from './icons/edu-icon.png';
+import edu_icon_dark from './icons/edu-icon-dark.png';
+import project_icon from './icons/project-icon.png';
+import project_icon_dark from './icons/project-icon-dark.png';
+import right_arrow_white from './icons/right-arrow-white.png';
+import mail_icon from './icons/mail_icon.png';
+import mail_icon_dark from './icons/mail_icon_dark.png';
+import download_icon from './icons/download-icon.png';
+import hand_icon from './icons/hand-icon.png';
+import moon_icon from './icons/moon_icon.png';
+import sun_icon from './icons/sun_icon.png';
+import arrow_icon from './icons/arrow-icon.png';
+import arrow_icon_dark from './icons/arrow-icon-dark.png';
+import menu_black from './icons/menu-black.png';
+import menu_white from './icons/menu-white.png';
+import close_black from './icons/close-black.png';
+import close_white from './icons/close-white.png';
+import web_icon from './icons/web-icon.png';
+import mobile_icon from './icons/mobile-icon.png';
+import python_icon from './icons/python-icon.png';
+import right_arrow from './icons/right-arrow.png';
+import send_icon from './icons/send-icon.png';
+import right_arrow_bold from './icons/right-arrow-bold.png';
+import right_arrow_bold_dark from './icons/right-arrow-bold-dark.png';
 
-import fam_money_main from './fam-money.png';
-import fam_money_0 from './fam-money-0.png';
-import fam_money_1 from './fam-money-1.png';
+// --- Tools ---
+import vscode from './tools/vscode.png';
+import firebase from './tools/firebase.png';
+import figma from './tools/figma.png';
+import git from './tools/git.png';
+import mongodb from './tools/mongodb.png';
 
-import imai_main from './imai.png';
-import imai_0 from './imai-0.png';
-import imai_1 from './imai-1.png';
+// --- Projects ---
+import placeholder from './projects/placeholder.png';
 
-import ims_main from './ims.png';
-import ims_0 from './ims-0.png';
-import ims_1 from './ims-1.png';
-import ims_2 from './ims-2.png';
+// --- Project Images ---
+import attendance_main from './projects/attendance/attendance.png';
+import attendance_0 from './projects/attendance/attendance-0.png';
+import attendance_1 from './projects/attendance/attendance-1.png';
+import attendance_2 from './projects/attendance/attendance-2.png';
 
-import iplm_main from './iplm.png';
-import iplm_0 from './iplm-0.png';
-import iplm_1 from './iplm-1.png';
-import iplm_2 from './iplm-2.png';
+import classifier_main from './projects/classifier/classifier.png';
 
-import mediqs_main from './mediqs.png';
-import mediqs_0 from './mediqs-0.png';
-import mediqs_1 from './mediqs-1.png';
-import mediqs_2 from './mediqs-2.png';
-import mediqs_3 from './mediqs-3.png';
+import fam_money_main from './projects/fam-money/fam-money.png';
+import fam_money_0 from './projects/fam-money/fam-money-0.png';
+import fam_money_1 from './projects/fam-money/fam-money-1.png';
 
-import recom_main from './recom.jpg';
-import recom_0 from './recom-0.jpg';
-import recom_1 from './recom-1.jpg';
-import recom_2 from './recom-2.jpg';
-import recom_3 from './recom-3.jpg';
-import recom_4 from './recom-4.jpg';
+import imai_main from './projects/imai/imai.png';
+import imai_0 from './projects/imai/imai-0.png';
+import imai_1 from './projects/imai/imai-1.png';
+
+import ims_main from './projects/ims/ims.png';
+import ims_0 from './projects/ims/ims-0.png';
+import ims_1 from './projects/ims/ims-1.png';
+import ims_2 from './projects/ims/ims-2.png';
+
+import iplm_main from './projects/iplm/iplm.png';
+import iplm_0 from './projects/iplm/iplm-0.png';
+import iplm_1 from './projects/iplm/iplm-1.png';
+import iplm_2 from './projects/iplm/iplm-2.png';
+
+import mediqs_main from './projects/mediqs/mediqs.png';
+import mediqs_0 from './projects/mediqs/mediqs-0.png';
+import mediqs_1 from './projects/mediqs/mediqs-1.png';
+import mediqs_2 from './projects/mediqs/mediqs-2.png';
+import mediqs_3 from './projects/mediqs/mediqs-3.png';
+
+import recom_main from './projects/recom/recom.jpg';
+import recom_0 from './projects/recom/recom-0.jpg';
+import recom_1 from './projects/recom/recom-1.jpg';
+import recom_2 from './projects/recom/recom-2.jpg';
+import recom_3 from './projects/recom/recom-3.jpg';
+import recom_4 from './projects/recom/recom-4.jpg';
 
 export const assets = {
     user_image,
