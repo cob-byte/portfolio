@@ -5,8 +5,8 @@ import { ReactTyped } from "react-typed";
 
 export default function Header() {
   return (
-    <section id="top" className="min-h-[calc(100vh-5rem)] lg:min-h-screen flex items-center px-6 sm:px-12 xl:px-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center py-16 lg:py-0">
+    <section id="top" className="lg:min-h-screen flex items-center px-6 sm:px-12 xl:px-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-4 pb-12 lg:py-0">
 
         {/* ── Left — text ── */}
         <div className="flex flex-col">

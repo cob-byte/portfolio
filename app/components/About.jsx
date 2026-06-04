@@ -2,7 +2,7 @@ import { skillsData } from "@/assets/assets";
 
 export default function About() {
   return (
-    <section id="about" className="w-full px-6 sm:px-12 xl:px-16 py-16 sm:py-24 scroll-mt-20">
+    <section id="about" className="w-full px-6 sm:px-12 xl:px-16 pt-10 pb-16 sm:py-24 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
