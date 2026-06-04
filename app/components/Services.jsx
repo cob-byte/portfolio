@@ -1,7 +1,7 @@
 export default function Services() {
   const stats = [
     { value: "2+", label: "Years experience" },
-    { value: "13", label: "Projects" },
+    { value: "12", label: "Projects" },
     { value: "3",  label: "Industries" },
   ];
 

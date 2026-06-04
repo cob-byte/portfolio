@@ -46,6 +46,15 @@ import mongodb from './tools/mongodb.png';
 import placeholder from './projects/placeholder.png';
 
 // --- Project Images ---
+import kolekta_main from './projects/kolekta/kolekta.png';
+import kolekta_0 from './projects/kolekta/kolekta-0.png';
+import kolekta_1 from './projects/kolekta/kolekta-1.png';
+import kolekta_2 from './projects/kolekta/kolekta-2.png';
+import kolekta_3 from './projects/kolekta/kolekta-3.png';
+import kolekta_4 from './projects/kolekta/kolekta-4.png';
+import kolekta_5 from './projects/kolekta/kolekta-5.png';
+import kolekta_6 from './projects/kolekta/kolekta-6.png';
+
 import attendance_main from './projects/attendance/attendance.png';
 import attendance_0 from './projects/attendance/attendance-0.png';
 import attendance_1 from './projects/attendance/attendance-1.png';
@@ -60,6 +69,34 @@ import fam_money_1 from './projects/fam-money/fam-money-1.png';
 import imai_main from './projects/imai/imai.png';
 import imai_0 from './projects/imai/imai-0.png';
 import imai_1 from './projects/imai/imai-1.png';
+import imai_2 from './projects/imai/imai-2.png';
+import imai_3 from './projects/imai/imai-3.png';
+import imai_4 from './projects/imai/imai-4.png';
+import imai_5 from './projects/imai/imai-5.png';
+import imai_6 from './projects/imai/imai-6.png';
+
+import linoflapqr_main from './projects/linoflapqr/linoflapqr.png';
+import linoflapqr_0 from './projects/linoflapqr/linoflapqr-0.png';
+import linoflapqr_1 from './projects/linoflapqr/linoflapqr-1.png';
+import linoflapqr_2 from './projects/linoflapqr/linoflapqr-2.png';
+import linoflapqr_3 from './projects/linoflapqr/linoflapqr-3.png';
+import linoflapqr_4 from './projects/linoflapqr/linoflapqr-4.png';
+import linoflapqr_5 from './projects/linoflapqr/linoflapqr-5.png';
+import linoflapqr_6 from './projects/linoflapqr/linoflapqr-6.png';
+
+import stl_main from './projects/stl/stl.png';
+import stl_0 from './projects/stl/stl-0.png';
+import stl_1 from './projects/stl/stl-1.png';
+import stl_2 from './projects/stl/stl-2.png';
+
+import woshub_main from './projects/wos-hub/woshub.png';
+import woshub_0 from './projects/wos-hub/wos-hub-0.png';
+import woshub_1 from './projects/wos-hub/wos-hub-1.png';
+import woshub_2 from './projects/wos-hub/wos-hub-2.png';
+import woshub_3 from './projects/wos-hub/wos-hub-3.png';
+import woshub_4 from './projects/wos-hub/wos-hub-4.png';
+import woshub_5 from './projects/wos-hub/wos-hub-5.png';
+import woshub_6 from './projects/wos-hub/wos-hub-6.png';
 
 import ims_main from './projects/ims/ims.png';
 import ims_0 from './projects/ims/ims-0.png';
@@ -126,6 +163,10 @@ export const assets = {
 
 // Project Images Object for easy access
 export const projectImages = {
+    kolekta: {
+        main: kolekta_main,
+        gallery: [kolekta_0, kolekta_1, kolekta_2, kolekta_3, kolekta_4, kolekta_5, kolekta_6]
+    },
     attendance: {
         main: attendance_main,
         gallery: [attendance_0, attendance_1, attendance_2]
@@ -140,7 +181,19 @@ export const projectImages = {
     },
     imai: {
         main: imai_main,
-        gallery: [imai_0, imai_1]
+        gallery: [imai_0, imai_1, imai_2, imai_3, imai_4, imai_5, imai_6]
+    },
+    linoflapqr: {
+        main: linoflapqr_main,
+        gallery: [linoflapqr_0, linoflapqr_1, linoflapqr_2, linoflapqr_3, linoflapqr_4, linoflapqr_5, linoflapqr_6]
+    },
+    stl: {
+        main: stl_main,
+        gallery: [stl_0, stl_1, stl_2]
+    },
+    woshub: {
+        main: woshub_main,
+        gallery: [woshub_0, woshub_1, woshub_2, woshub_3, woshub_4, woshub_5, woshub_6]
     },
     ims: {
         main: ims_main,
@@ -283,46 +336,18 @@ export const skillsData = [
 ];
 
 export const projects = [
-  // --- Mobile ---
   {
     id: 1,
     title: "Kolekta - Field Lending & Collection App",
     description: "Production React Native app for field lending agents in the Philippines. Handles the full agent workflow — loan creation, daily collection rounds, GPS route optimization, and allottee management. Distributed as an Android APK with EAS OTA updates and single-flight token refresh for seamless offline-to-online sync.",
-    image: placeholder,
-    gallery: [],
+    image: projectImages.kolekta.main,
+    gallery: projectImages.kolekta.gallery,
     category: "Mobile",
     skills: ["React Native", "Expo", "NativeWind", "TanStack Query", "Zustand", "Google Maps", "EAS"],
     links: []
   },
   {
     id: 2,
-    title: "STL Betting & Lottery Mobile App",
-    description: "Enterprise-grade React Native app for a betting and lottery operator. Features offline betting with Realm local storage, geofencing for location-restricted access, SMS integration, kiosk mode, technician tracking, and device security checks with discrepancy resolution workflows.",
-    image: placeholder,
-    gallery: [],
-    category: "Mobile",
-    skills: ["React Native", "Expo", "Realm", "Geofencing", "SMS Integration", "Offline Sync"],
-    links: []
-  },
-  {
-    id: 3,
-    title: "ReCom - Community Communication App",
-    description: "Sector-based mobile app for barangay communities. Includes user accounts, community voting, virtual transactions for barangay facilities, pasuyo services for physically absent members, and direct access to emergency institutions.",
-    image: projectImages.recom.main,
-    gallery: projectImages.recom.gallery,
-    category: "Mobile",
-    skills: ["React Native", "Expo", "Firebase", "Real-time Communication"],
-    links: [
-      {
-        id: 1,
-        title: "GitHub",
-        link: "https://github.com/cob-byte/Recom",
-        icon: "FaGithub"
-      }
-    ]
-  },
-  {
-    id: 4,
     title: "IMS Payroll Mobile",
     description: "Mobile payroll app for IMS Philippines Maritime Corp seafarers. Lets crew view payslips, deductions, contributions, and remittances, and manage allottees with percentage or fixed allocation options.",
     image: projectImages.ims.main,
@@ -332,7 +357,7 @@ export const projects = [
     links: []
   },
   {
-    id: 5,
+    id: 3,
     title: "IMAI Cart Mobile Application",
     description: "Mobile companion app for the IM.AI Cart smart shopping system at Linoflap Technology. Syncs in real time with the tablet application using a Node.js backend, providing a seamless cross-platform cart experience.",
     image: projectImages.imai.main,
@@ -341,19 +366,35 @@ export const projects = [
     skills: ["React Native", "Expo", "Node.js", "Real-time Sync"],
     links: []
   },
-  // --- Web / Full-Stack ---
   {
-    id: 6,
+    id: 4,
     title: "LinoflapQR - Contactless Table Ordering System",
     description: "Full-stack QR ordering platform for Philippine restaurants — a self-hosted alternative to Qashier and RUSH. Customers scan a table QR to browse menus and place orders; staff manage them across Kitchen, Cashier, and Manager dashboards. Built with Supabase Realtime for live order updates and TanStack Start for SSR.",
-    image: placeholder,
-    gallery: [],
+    image: projectImages.linoflapqr.main,
+    gallery: projectImages.linoflapqr.gallery,
     category: "Web",
     skills: ["TanStack Start", "React 19", "TypeScript", "Supabase", "Hono", "Prisma", "Shadcn/ui", "Playwright"],
     links: []
   },
   {
-    id: 7,
+    id: 5,
+    title: "WOS Hub - Guild Strategy & Calculator App",
+    description: "Full-stack web app for a Whiteout Survival guild. Includes 11 game calculators (charms, troops, hero XP, etc.), JWT-authenticated user accounts with saved progress, role-based access, an SVS strategy editor for admins, and a member directory — all deployed as a monorepo on Render.",
+    image: projectImages.woshub.main,
+    gallery: projectImages.woshub.gallery,
+    category: "Web",
+    skills: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma", "Zustand", "Framer Motion"],
+    links: [
+      {
+        id: 1,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/wos-hub",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 6,
     title: "Mediqs - Healthcare Management System",
     description: "Web-based electronic medical record portal for primary healthcare facilities with predictive analytics for disease outbreak forecasting. Streamlines patient records, appointment workflows, and generates actionable health insights for clinic administrators.",
     image: projectImages.mediqs.main,
@@ -376,7 +417,34 @@ export const projects = [
     ]
   },
   {
+    id: 7,
+    title: "Betting & Lottery Mobile App",
+    description: "Enterprise-grade React Native app for a betting and lottery operator. Features offline betting with Realm local storage, geofencing for location-restricted access, SMS integration, kiosk mode, technician tracking, and device security checks with discrepancy resolution workflows.",
+    image: projectImages.stl.main,
+    gallery: projectImages.stl.gallery,
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Realm", "Geofencing", "SMS Integration", "Offline Sync"],
+    links: []
+  },
+  {
     id: 8,
+    title: "ReCom - Community Communication App",
+    description: "Sector-based mobile app for barangay communities. Includes user accounts, community voting, virtual transactions for barangay facilities, pasuyo services for physically absent members, and direct access to emergency institutions.",
+    image: projectImages.recom.main,
+    gallery: projectImages.recom.gallery,
+    category: "Mobile",
+    skills: ["Android Studio Java", "Firebase", "Real-time Communication"],
+    links: [
+      {
+        id: 1,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/Recom",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 9,
     title: "iPLM - Integrated PLM System",
     description: "Educational management system for Pamantasan ng Lungsod ng Maynila serving administrators, faculty, students, and applicants. Digitizes enrollment, grading, scheduling, and records management — replacing decades of manual paperwork.",
     image: projectImages.iplm.main,
@@ -399,7 +467,7 @@ export const projects = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     title: "Family Money Tracker",
     description: "Financial management app for tracking family income and expenses across multiple members. Includes budget management, categorized expense reports, and a shared transaction ledger so the whole household stays on the same page.",
     image: projectImages.famMoney.main,
@@ -422,7 +490,7 @@ export const projects = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     title: "School Attendance Management System",
     description: "Role-based attendance tracking system for schools with face detection for photo validation. Administrators manage student records and generate reports; students log attendance via a self-service portal backed by JWT auth and email notifications.",
     image: projectImages.attendance.main,
@@ -432,35 +500,7 @@ export const projects = [
     links: []
   },
   {
-    id: 11,
-    title: "Kolekta Admin Dashboard",
-    description: "Admin control panel for the Kolekta lending platform. Provides system-wide oversight for managing lenders, user roles, and platform settings. Built with strict TypeScript, TanStack Query for server state, and Zod for validated forms throughout.",
-    image: placeholder,
-    gallery: [],
-    category: "Web",
-    skills: ["React", "TypeScript", "Vite", "TanStack Query", "Zod", "Tailwind CSS"],
-    links: []
-  },
-  {
     id: 12,
-    title: "WOS Hub - Guild Strategy & Calculator App",
-    description: "Full-stack web app for a Whiteout Survival guild. Includes 11 game calculators (charms, troops, hero XP, etc.), JWT-authenticated user accounts with saved progress, role-based access, an SVS strategy editor for admins, and a member directory — all deployed as a monorepo on Render.",
-    image: placeholder,
-    gallery: [],
-    category: "Web",
-    skills: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma", "Zustand", "Framer Motion"],
-    links: [
-      {
-        id: 1,
-        title: "GitHub",
-        link: "https://github.com/cob-byte/wos-hub",
-        icon: "FaGithub"
-      }
-    ]
-  },
-  // --- Python / ML ---
-  {
-    id: 13,
     title: "IMAI Cart Classifier System",
     description: "Product identification system for the IM.AI smart cart using OCR, color, texture, and feature matching with LightGlue. A FastAPI interface handles image upload, dataset management, and real-time barcode classification, while a separate GUI tool manages dataset collection and model training.",
     image: projectImages.classifier.main,
