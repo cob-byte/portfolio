@@ -4,22 +4,49 @@ import * as Icons from "react-icons/fa";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
 
+const FILTERS = ["All", "Mobile", "Web", "ML"];
+
 const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filtered = activeFilter === "All"
+    ? projects
+    : projects.filter((p) => p.category === activeFilter);
+
   return (
     <section id="projects" className="w-full px-4 sm:px-6 md:px-8 lg:px-[8%] xl:px-[12%] py-10 scroll-mt-20">
       <div className="text-center mb-12">
         <h4 className="text-base sm:text-lg mb-2 font-Ovo">My Work</h4>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-Ovo">Portfolio</h2>
         <p className="mt-4 sm:mt-6 max-w-3xl mx-auto font-Ovo text-sm sm:text-base md:text-lg leading-relaxed">
-          Each project represents a journey of transforming innovative ideas into tangible solutions. 
-          Explore my work spanning Web Development, Mobile Development, and Machine Learning — 
+          Explore my work spanning Mobile Development, Web Development, and Machine Learning —
           where research meets production and dreams become code.
         </p>
+
+        {/* Filter tabs */}
+        <div className="flex items-center justify-center gap-2 mt-8 flex-wrap">
+          {FILTERS.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-200
+                ${activeFilter === filter
+                  ? "bg-black text-white border-black"
+                  : "bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-black"
+                }`}
+            >
+              {filter === "ML" ? "Machine Learning" : filter}
+              <span className={`ml-2 text-xs px-1.5 py-0.5 rounded-full
+                ${activeFilter === filter ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"}`}>
+                {filter === "All" ? projects.length : projects.filter(p => p.category === filter).length}
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
-      
-      {/* Main Projects */}
+
       <div className="flex flex-col gap-12 lg:gap-20 w-full mt-8">
-        {projects.map((project, index) => (
+        {filtered.map((project, index) => (
           <CardProject key={project.id} index={index} {...project} />
         ))}
       </div>
@@ -55,8 +82,8 @@ const CardProject = (props) => {
   return (
     <>
       <article
-        className={`group bg-white shadow-lg rounded-2xl p-4 sm:p-6 lg:p-8 text-center flex flex-col gap-6 lg:gap-8 
-          md:flex-row md:text-left hover:shadow-xl transition-all duration-300 hover:-translate-y-1
+        className={`group bg-white border border-gray-200 rounded-2xl shadow-sm p-4 sm:p-6 lg:p-8 text-center flex flex-col gap-6 lg:gap-8
+          md:flex-row md:text-left hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 transition-all duration-300
           ${props.index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
       >
         <div className="w-full md:w-1/2 flex-shrink-0">

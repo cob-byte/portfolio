@@ -14,7 +14,7 @@ const Footer = () => {
       </div>
 
       <div className="sm:flex items-center justify-between border-t-2 border-gray-400 mx-[10%] mt-12 py-6 text-center">
-        <p>© 2025 Jacob Barcelona. All rights reserved.</p>
+        <p>© 2026 Jacob Barcelona. All rights reserved.</p>
         <ul className="flex gap-10 items-center justify-center mt-4 sm:mt-0">
             <li className="cursor-pointer"><a target="_blank" href="https://github.com/cob-byte">Github</a></li>
             <li className="cursor-pointer"><a target="_blank" href="https://www.linkedin.com/in/cob-bytes/">LinkedIn</a></li>            

@@ -152,29 +152,6 @@ export const projectImages = {
     }
 };
 
-export const workData = [
-    {
-        title: 'Frontend project',
-        description: 'Web Design',
-        bgImage: '/work-1.png',
-    },
-    {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-    },
-    {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
-        description: 'UI/UX Design',
-        bgImage: '/work-4.png',
-    },
-]
-
 export const serviceData = [
     { 
         icon: assets.web_icon, 
@@ -199,14 +176,20 @@ export const serviceData = [
 export const infoList = [
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.Science in Information Technology' },
     { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Experience', description: '2+ Years in Development' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 13 projects' }
 ];
 
 export const skillsData = [
+    // Mobile
     {
-      name: "Wordpress",
-      icon: "https://s.w.org/style/images/about/WordPress-logotype-wmark.png"
+      name: "React Native",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
     },
+    {
+      name: "Expo",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/expo/expo-original.svg"
+    },
+    // Web
     {
       name: "HTML",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
@@ -220,32 +203,53 @@ export const skillsData = [
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
     },
     {
-      name: "React Native",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+      name: "Django",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
     },
     {
-      name: "Python",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-    },
-    {
-      name: "MySQL",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-    },
-    {
-      name: "PostgreSQL",
-      icon: "https://user-images.githubusercontent.com/25181517/117208740-bfb78400-adf5-11eb-97bb-09072b6bedfc.png"
-    },
-    {
-      name: "SQLite",
-      icon: "https://github.com/marwin1991/profile-technology-icons/assets/136815194/82df4543-236b-4e45-9604-5434e3faab17"
+      name: "Supabase",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
     },
     {
       name: "Firebase",
       icon: "https://user-images.githubusercontent.com/25181517/189716855-2c69ca7a-5149-4647-936d-780610911353.png"
     },
     {
-      name: "Django",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+      name: "PostgreSQL",
+      icon: "https://user-images.githubusercontent.com/25181517/117208740-bfb78400-adf5-11eb-97bb-09072b6bedfc.png"
+    },
+    {
+      name: "MySQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+    },
+    {
+      name: "SQLite",
+      icon: "https://github.com/marwin1991/profile-technology-icons/assets/136815194/82df4543-236b-4e45-9604-5434e3faab17"
+    },
+    {
+      name: "Wordpress",
+      icon: "https://s.w.org/style/images/about/WordPress-logotype-wmark.png"
+    },
+    // Python / ML
+    {
+      name: "Python",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+    },
+    {
+      name: "OpenCV",
+      icon: "https://raw.githubusercontent.com/wiki/opencv/opencv/logo/OpenCV_logo_no_text.svg?sanitize=true"
+    },
+    {
+      name: "TensorFlow",
+      icon: "https://user-images.githubusercontent.com/25181517/223639822-2a01e63a-a7f9-4a39-8930-61431541bc06.png"
+    },
+    {
+      name: "PyTorch",
+      icon: "https://raw.githubusercontent.com/valohai/ml-logos/d8dfb916e50a93a41f3b1ed2ca7bd3dbc77030a2/pytorch.svg"
+    },
+    {
+      name: "Scikit-learn",
+      icon: "https://raw.githubusercontent.com/scikit-learn/scikit-learn/75ae2c56111e3aac2768ba0a4f0a77d30d4e2605/doc/logos/scikit-learn-logo-without-subtitle.svg"
     },
     {
       name: "Pandas",
@@ -255,22 +259,7 @@ export const skillsData = [
       name: "NumPy",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
     },
-    {
-      name: "OpenCV",
-      icon: "https://raw.githubusercontent.com/wiki/opencv/opencv/logo/OpenCV_logo_no_text.svg?sanitize=true"
-    },
-    {
-      name: "Scikit-learn",
-      icon: "https://raw.githubusercontent.com/scikit-learn/scikit-learn/75ae2c56111e3aac2768ba0a4f0a77d30d4e2605/doc/logos/scikit-learn-logo-without-subtitle.svg"
-    },
-    {
-      name: "PyTorch",
-      icon: "https://raw.githubusercontent.com/valohai/ml-logos/d8dfb916e50a93a41f3b1ed2ca7bd3dbc77030a2/pytorch.svg"
-    },
-    {
-      name: "TensorFlow",
-      icon: "https://user-images.githubusercontent.com/25181517/223639822-2a01e63a-a7f9-4a39-8930-61431541bc06.png"
-    },
+    // Tools
     {
       name: "Git",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
@@ -285,15 +274,84 @@ export const skillsData = [
     },
 ];
 
-// Portfolio data with corrected image references
 export const projects = [
+  // --- Mobile ---
   {
     id: 1,
+    title: "Kolekta - Field Lending & Collection App",
+    description: "Production React Native app for field lending agents in the Philippines. Handles the full agent workflow — loan creation, daily collection rounds, GPS route optimization, and allottee management. Distributed as an Android APK with EAS OTA updates and single-flight token refresh for seamless offline-to-online sync.",
+    image: placeholder,
+    gallery: [],
+    category: "Mobile",
+    skills: ["React Native", "Expo", "NativeWind", "TanStack Query", "Zustand", "Google Maps", "EAS"],
+    links: []
+  },
+  {
+    id: 2,
+    title: "STL Betting & Lottery Mobile App",
+    description: "Enterprise-grade React Native app for a betting and lottery operator. Features offline betting with Realm local storage, geofencing for location-restricted access, SMS integration, kiosk mode, technician tracking, and device security checks with discrepancy resolution workflows.",
+    image: placeholder,
+    gallery: [],
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Realm", "Geofencing", "SMS Integration", "Offline Sync"],
+    links: []
+  },
+  {
+    id: 3,
+    title: "ReCom - Community Communication App",
+    description: "Sector-based mobile app for barangay communities. Includes user accounts, community voting, virtual transactions for barangay facilities, pasuyo services for physically absent members, and direct access to emergency institutions.",
+    image: projectImages.recom.main,
+    gallery: projectImages.recom.gallery,
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Firebase", "Real-time Communication"],
+    links: [
+      {
+        id: 1,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/Recom",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "IMS Payroll Mobile",
+    description: "Mobile payroll app for IMS Philippines Maritime Corp seafarers. Lets crew view payslips, deductions, contributions, and remittances, and manage allottees with percentage or fixed allocation options.",
+    image: projectImages.ims.main,
+    gallery: projectImages.ims.gallery,
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Payroll Systems", "Maritime Industry"],
+    links: []
+  },
+  {
+    id: 5,
+    title: "IMAI Cart Mobile Application",
+    description: "Mobile companion app for the IM.AI Cart smart shopping system at Linoflap Technology. Syncs in real time with the tablet application using a Node.js backend, providing a seamless cross-platform cart experience.",
+    image: projectImages.imai.main,
+    gallery: projectImages.imai.gallery,
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Node.js", "Real-time Sync"],
+    links: []
+  },
+  // --- Web / Full-Stack ---
+  {
+    id: 6,
+    title: "LinoflapQR - Contactless Table Ordering System",
+    description: "Full-stack QR ordering platform for Philippine restaurants — a self-hosted alternative to Qashier and RUSH. Customers scan a table QR to browse menus and place orders; staff manage them across Kitchen, Cashier, and Manager dashboards. Built with Supabase Realtime for live order updates and TanStack Start for SSR.",
+    image: placeholder,
+    gallery: [],
+    category: "Web",
+    skills: ["TanStack Start", "React 19", "TypeScript", "Supabase", "Hono", "Prisma", "Shadcn/ui", "Playwright"],
+    links: []
+  },
+  {
+    id: 7,
     title: "Mediqs - Healthcare Management System",
-    description: "Revolutionizing healthcare management in primary healthcare facilities through a web-based electronic medical record portal system with predictive analytics for disease outbreaks. Built to improve accessibility, efficiency, and accuracy of patient information while streamlining healthcare workflows.",
+    description: "Web-based electronic medical record portal for primary healthcare facilities with predictive analytics for disease outbreak forecasting. Streamlines patient records, appointment workflows, and generates actionable health insights for clinic administrators.",
     image: projectImages.mediqs.main,
     gallery: projectImages.mediqs.gallery,
-    skills: ["Django", "JavaScript", "Bootstrap", "Jupyter Notebook", "PostgreSQL", "Predictive Analytics"],
+    category: "Web",
+    skills: ["Django", "JavaScript", "Bootstrap", "PostgreSQL", "Jupyter Notebook", "Predictive Analytics"],
     links: [
       {
         id: 1,
@@ -310,12 +368,36 @@ export const projects = [
     ]
   },
   {
-    id: 2,
+    id: 8,
+    title: "iPLM - Integrated PLM System",
+    description: "Educational management system for Pamantasan ng Lungsod ng Maynila serving administrators, faculty, students, and applicants. Digitizes enrollment, grading, scheduling, and records management — replacing decades of manual paperwork.",
+    image: projectImages.iplm.main,
+    gallery: projectImages.iplm.gallery,
+    category: "Web",
+    skills: ["Django", "React", "PostgreSQL", "JWT", "Tailwind CSS"],
+    links: [
+      {
+        id: 1,
+        title: "Live Demo",
+        link: "https://iplm-demo.up.railway.app/",
+        icon: "FaExternalLinkAlt"
+      },
+      {
+        id: 2,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/iPLM-Public",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 9,
     title: "Family Money Tracker",
-    description: "A comprehensive financial management system designed to help track and manage family finances. Features include expense tracking, budget management, financial reports, and multi-member support to ensure no transaction is forgotten and every penny is accounted for.",
+    description: "Financial management app for tracking family income and expenses across multiple members. Includes budget management, categorized expense reports, and a shared transaction ledger so the whole household stays on the same page.",
     image: projectImages.famMoney.main,
     gallery: projectImages.famMoney.gallery,
-    skills: ["React", "Node.js", "Firebase Auth", "Firebase Realtime Database", "Railway"],
+    category: "Web",
+    skills: ["React", "Node.js", "Firebase Auth", "Firebase Realtime Database"],
     links: [
       {
         id: 1,
@@ -332,157 +414,51 @@ export const projects = [
     ]
   },
   {
-    id: 3,
-    title: "iPLM - Integrated PLM System",
-    description: "A comprehensive educational management system designed for administrators, faculty, students, and applicants. Built with passion to provide a flexible, beginner-friendly, and convenient platform that digitizes decades of physical processes, encouraging technology adoption in education.",
-    image: projectImages.iplm.main,
-    gallery: projectImages.iplm.gallery,
-    skills: ["Full Stack", "Educational Technology", "User Experience", "System Integration"],
-    links: [
-      {
-        id: 1,
-        title: "Project Demo",
-        link: "https://iplm-demo.up.railway.app/",
-        icon: "FaExternalLinkAlt"
-      },
-      {
-        id: 2,
-        title: "GitHub",
-        link: "https://github.com/cob-byte/iPLM-Public",
-        icon: "FaGithub"
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: "ReCom - Community Communication App",
-    description: "A sector-based mobile application for barangay communities featuring user accounts, community consensus, voting systems, virtual transactions for barangay facilities, 'pasuyo' services for physically absent members, and emergency institution access for community safety.",
-    image: projectImages.recom.main,
-    gallery: projectImages.recom.gallery,
-    skills: ["React Native", "Mobile Development", "Community Tech", "Real-time Communication"],
-    links: [
-      {
-        id: 1,
-        title: "Mobile App",
-        link: "",
-        icon: "FaMobile"
-      },
-      {
-        id: 2,
-        title: "GitHub",
-        link: "https://github.com/cob-byte/Recom",
-        icon: "FaGithub"
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "IMS Payroll Mobile",
-    description: "Mobile payroll application for IMS Philippines Maritime Corp seafarers. Features include viewing deductions, payroll details, notifications, contributions, remittances, and comprehensive allottee management with percentage or fixed amount allocation options.",
-    image: projectImages.ims.main,
-    gallery: projectImages.ims.gallery,
-    skills: ["React Native", "Mobile Development", "Payroll Systems", "Maritime Industry"],
-    links: [
-      {
-        id: 1,
-        title: "Mobile App",
-        link: "",
-        icon: "FaMobile"
-      },
-      {
-        id: 2,
-        title: "GitHub",
-        link: "",
-        icon: "FaGithub"
-      }
-    ]
-  },
-  {
-    id: 6,
+    id: 10,
     title: "School Attendance Management System",
-    description: "Web-based attendance tracking system with role-based access for administrators and students. Features face detection for photo validation, comprehensive dashboards, JWT authentication, email notifications, and data backup/recovery capabilities.",
+    description: "Role-based attendance tracking system for schools with face detection for photo validation. Administrators manage student records and generate reports; students log attendance via a self-service portal backed by JWT auth and email notifications.",
     image: projectImages.attendance.main,
     gallery: projectImages.attendance.gallery,
+    category: "Web",
     skills: ["Django", "React", "PostgreSQL", "Face Detection", "JWT", "Tailwind CSS"],
+    links: []
+  },
+  {
+    id: 11,
+    title: "Kolekta Admin Dashboard",
+    description: "Admin control panel for the Kolekta lending platform. Provides system-wide oversight for managing lenders, user roles, and platform settings. Built with strict TypeScript, TanStack Query for server state, and Zod for validated forms throughout.",
+    image: placeholder,
+    gallery: [],
+    category: "Web",
+    skills: ["React", "TypeScript", "Vite", "TanStack Query", "Zod", "Tailwind CSS"],
+    links: []
+  },
+  {
+    id: 12,
+    title: "WOS Hub - Guild Strategy & Calculator App",
+    description: "Full-stack web app for a Whiteout Survival guild. Includes 11 game calculators (charms, troops, hero XP, etc.), JWT-authenticated user accounts with saved progress, role-based access, an SVS strategy editor for admins, and a member directory — all deployed as a monorepo on Render.",
+    image: placeholder,
+    gallery: [],
+    category: "Web",
+    skills: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma", "Zustand", "Framer Motion"],
     links: [
       {
         id: 1,
-        title: "Live Demo",
-        link: "",
-        icon: "FaExternalLinkAlt"
-      },
-      {
-        id: 2,
-        title: "Details",
-        link: "",
-        icon: "FaInfoCircle"
+        title: "GitHub",
+        link: "https://github.com/cob-byte/wos-hub",
+        icon: "FaGithub"
       }
     ]
   },
+  // --- Python / ML ---
   {
-    id: 7,
-    title: "IMAI Cart Mobile Application",
-    description: "Connected mobile companion app for the IM.AI Cart Tablet Application. Built with React Native and Expo for seamless integration, featuring Node.js backend for real-time data syncing across tablet and mobile platforms.",
-    image: projectImages.imai.main,
-    gallery: projectImages.imai.gallery,
-    skills: ["React Native", "Expo", "Node.js", "Real-time Sync", "Cross-platform"],
-    links: [
-      {
-        id: 1,
-        title: "Mobile App",
-        link: "",
-        icon: "FaMobile"
-      },
-      {
-        id: 2,
-        title: "Details",
-        link: "",
-        icon: "FaInfoCircle"
-      }
-    ]
-  },
-  {
-    id: 8,
+    id: 13,
     title: "IMAI Cart Classifier System",
-    description: "Robust product identification system using OCR, color, texture, and feature matching. FastAPI-based interface for image upload, dataset management, and real-time classification via barcode detection. Includes GUI for dataset collection and model training.",
+    description: "Product identification system for the IM.AI smart cart using OCR, color, texture, and feature matching with LightGlue. A FastAPI interface handles image upload, dataset management, and real-time barcode classification, while a separate GUI tool manages dataset collection and model training.",
     image: projectImages.classifier.main,
     gallery: projectImages.classifier.gallery,
-    skills: ["Python", "FastAPI", "Computer Vision", "Machine Learning", "LightGlue", "OCR"],
-    links: [
-      {
-        id: 1,
-        title: "API Demo",
-        link: "",
-        icon: "FaServer"
-      },
-      {
-        id: 2,
-        title: "Details",
-        link: "",
-        icon: "FaInfoCircle"
-      }
-    ]
-  },
-  {
-    id: 9,
-    title: "IM.AI Cart Tablet Application",
-    description: "My first project lead at Linoflap Technology Philippines Inc. Designed and developed a tablet application using PyQt Designer and PyCharm, built with Python and Flask in an Anaconda environment. This foundational project combines intuitive design with robust backend functionality.",
-    image: projectImages.imai.main, // Using same image as mobile version
-    gallery: projectImages.imai.gallery,
-    skills: ["Python", "Flask", "PyQt", "Anaconda", "Tablet Development"],
-    links: [
-      {
-        id: 1,
-        title: "Tablet App",
-        link: "",
-        icon: "FaTablet"
-      },
-      {
-        id: 2,
-        title: "Details",
-        link: "",
-        icon: "FaInfoCircle"
-      }
-    ]
+    category: "ML",
+    skills: ["Python", "FastAPI", "OpenCV", "LightGlue", "OCR", "Machine Learning"],
+    links: []
   }
 ];

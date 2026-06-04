@@ -12,7 +12,7 @@ const Services = () => {
       <ul className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 my-10">
         {serviceData.map(({ icon, title, description, link }, index) => (
           <li
-            className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer flex flex-col items-center text-center hover:bg-blue-50 hover:-translate-y-1 duration-500 hover:shadow-black justify-between"
+            className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 cursor-pointer flex flex-col items-center text-center hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 duration-300 justify-between"
             key={index}
           >
             <Image src={icon} alt={title} className="w-12 aspect-square" />
