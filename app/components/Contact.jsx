@@ -1,173 +1,106 @@
-import { assets } from "@/assets/assets";
-import Image from "next/image";
-import React, { useState } from "react";
+"use client";
+import { useState } from "react";
 
-const Contact = () => {
-  const [result, setResult] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
+export default function Contact() {
+  const [result, setResult]           = useState("");
+  const [isSubmitting, setSubmitting] = useState(false);
+  const [form, setForm]               = useState({ name: "", email: "", message: "" });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setIsSubmitting(true);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
     setResult("Sending...");
-    
-    const formDataObj = new FormData(event.target);
 
-    // Get access key from environment variables
-    formDataObj.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
+    const data = new FormData(e.target);
+    data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formDataObj,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setResult("Form Submitted Successfully");
-        setFormData({ name: "", email: "", message: "" });
-        event.target.reset();
-        
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-          setResult("");
-        }, 5000);
+      const res  = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      const json = await res.json();
+      if (json.success) {
+        setResult("Message sent! I'll get back to you soon.");
+        setForm({ name: "", email: "", message: "" });
+        e.target.reset();
       } else {
-        console.log("Error", data);
-        setResult(data.message || "Something went wrong. Please try again.");
-        
-        // Clear error message after 5 seconds
-        setTimeout(() => {
-          setResult("");
-        }, 5000);
+        setResult(json.message || "Something went wrong. Please try again.");
       }
-    } catch (error) {
-      console.error("Submit error:", error);
-      setResult("Network error. Please check your connection and try again.");
-      
-      // Clear error message after 5 seconds
-      setTimeout(() => {
-        setResult("");
-      }, 5000);
+    } catch {
+      setResult("Network error. Please check your connection.");
     } finally {
-      setIsSubmitting(false);
+      setSubmitting(false);
+      setTimeout(() => setResult(""), 5000);
     }
   };
 
-  const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
+  const isValid = form.name.trim() && form.email.trim() && form.message.trim();
+  const inputCls = `w-full bg-surface border border-border rounded-xl px-4 py-3 text-text text-sm outline-none
+    placeholder:text-muted transition-colors duration-200 focus:border-accent
+    disabled:opacity-40 disabled:cursor-not-allowed`;
 
   return (
-    <div
-      id="contact"
-      className='w-full px-[12%] py-10 scroll-mt-20 bg-[url("/footer-bg-color.png")] bg-[length:90%_auto] bg-center'
-    >
-      <div className="flex flex-col justify-center items-center text-center font-Ovo">
-        <h4 className="text-lg mb-2">Connect with me</h4>
-        <h2 className="text-5xl">Get in touch</h2>
-        <p className="mt-4 sm:mt-6 max-w-3xl mx-auto font-Ovo text-sm sm:text-base md:text-lg leading-relaxed">
-          Ready to bring your ideas to life? I'm always excited to discuss new projects, 
-          collaboration opportunities, or answer any questions about my work. Let's connect 
-          and create something amazing together.
-        </p>
-      </div>
-      <form className="max-w-2xl mx-auto" onSubmit={onSubmit}>
-        <div className="grid grid-cols-(--my-grid-cols) gap-6 mt-10 mb-8">
-          <input
-            type="text"
-            placeholder="Enter your name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-            disabled={isSubmitting}
-            className={`p-3 outline-none border-[0.5px] rounded-md bg-white transition-all duration-300 ${
-              isSubmitting 
-                ? 'border-gray-300 bg-gray-50 cursor-not-allowed' 
-                : 'border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-            }`}
-          />
-          <input
-            type="email"
-            placeholder="Enter your email"
-            required
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            disabled={isSubmitting}
-            className={`p-3 outline-none border-[0.5px] rounded-md bg-white transition-all duration-300 ${
-              isSubmitting 
-                ? 'border-gray-300 bg-gray-50 cursor-not-allowed' 
-                : 'border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-            }`}
-          />
-        </div>
-        <textarea
-          rows={6}
-          placeholder="Enter your message"
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-          required
-          disabled={isSubmitting}
-          className={`p-4 w-full outline-none border-[0.5px] rounded-md bg-white mb-6 transition-all duration-300 resize-none ${
-            isSubmitting 
-              ? 'border-gray-300 bg-gray-50 cursor-not-allowed' 
-              : 'border-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-          }`}
-        ></textarea>
-        <button
-          type="submit"
-          disabled={!isFormValid || isSubmitting}
-          className={`py-3 px-8 w-max flex items-center justify-between gap-2 rounded-full mx-auto transition-all duration-500 ${
-            !isFormValid || isSubmitting
-              ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
-              : 'bg-black/80 text-white hover:bg-black hover:scale-105 active:scale-95'
-          }`}
-        >
-          {isSubmitting ? (
-            <>
-              <span className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></span>
-              Sending...
-            </>
-          ) : (
-            <>
-              Submit Now
-              <Image
-                src={assets.right_arrow_white}
-                className="w-4"
-                alt="send_icon"
-              />
-            </>
-          )}
-        </button>
-        {result && (
-          <p className={`mt-4 text-center font-medium transition-all duration-300 ${
-            result.includes('Successfully') 
-              ? 'text-green-600' 
-              : result.includes('Sending') 
-                ? 'text-blue-600' 
-                : 'text-red-600'
-          }`}>
-            {result}
-          </p>
-        )}
-      </form>
-    </div>
-  );
-};
+    <section id="contact" className="w-full px-6 sm:px-12 xl:px-16 py-16 sm:py-24 scroll-mt-20 border-t border-border">
+      <div className="max-w-3xl mx-auto">
 
-export default Contact;
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-text tracking-tight mb-6">
+            Contact
+          </h2>
+          <p className="text-muted text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+            Have a project in mind or want to collaborate? I&apos;m always open to new opportunities.
+            Drop me a message and I&apos;ll get back to you.
+          </p>
+        </div>
+
+
+        {/* Form */}
+        <form onSubmit={onSubmit} className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              type="text" name="name" placeholder="Your name"
+              value={form.name} onChange={onChange}
+              required disabled={isSubmitting}
+              className={inputCls}
+            />
+            <input
+              type="email" name="email" placeholder="Your email"
+              value={form.email} onChange={onChange}
+              required disabled={isSubmitting}
+              className={inputCls}
+            />
+          </div>
+          <textarea
+            name="message" placeholder="Your message" rows={6}
+            value={form.message} onChange={onChange}
+            required disabled={isSubmitting}
+            className={`${inputCls} resize-none`}
+          />
+
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
+            <button
+              type="submit"
+              disabled={!isValid || isSubmitting}
+              className={`w-full sm:w-auto px-10 py-3 rounded-full font-medium text-sm transition-all duration-200
+                ${isValid && !isSubmitting
+                  ? "bg-accent text-white hover:bg-red-600 hover:scale-105 active:scale-95"
+                  : "bg-surface border border-border text-muted cursor-not-allowed"
+                }`}
+            >
+              {isSubmitting ? "Sending…" : "Send Message →"}
+            </button>
+
+            {result && (
+              <p className={`text-sm transition-all duration-300
+                ${result.includes("sent") ? "text-green-400" : result.includes("Sending") ? "text-accent" : "text-red-400"}`}>
+                {result}
+              </p>
+            )}
+          </div>
+        </form>
+
+      </div>
+    </section>
+  );
+}

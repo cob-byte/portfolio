@@ -3,73 +3,89 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { ReactTyped } from "react-typed";
 
-const Header = () => {
+export default function Header() {
   return (
-      <div className="flex flex-col items-center justify-center text-center max-w-3xl w-11/12 gap-4 mx-auto mb-10">
-      <Image
-        src={assets.profile_img}
-        alt="profile_img"
-        className="rounded-full w-32"
-      />
+    <section id="top" className="min-h-[calc(100vh-5rem)] lg:min-h-screen flex items-center px-6 sm:px-12 xl:px-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center py-16 lg:py-0">
 
-      <h3 className="flex items-center gap-2 text-xl md:text-2xl font-Ovo">
-        Hi! I'm Jacob {" "}
-        <Image src={assets.hand_icon} alt="hand_icon" className="w-6" />
-      </h3>
+        {/* ── Left — text ── */}
+        <div className="flex flex-col">
 
-      {/* Typing Animation Section */}
-      <div className="text-2xl md:text-3xl font-Ovo">
-        <span id="iama">I enjoy building with</span>&nbsp;&nbsp;
-        <ReactTyped
-          strings={[
-            '<span style="color: #61dafb;">React Native</span>',
-            '<span style="color: #000020;">Expo</span>',
-            '<span style="color: #3ecf8e;">Supabase</span>',
-            '<span style="color: #e34f26;">HTML</span>, <span style="color: #1572b6;">CSS</span>, <span style="color: #f7df1e;">JS</span>',
-            '<span style="color: #092e20;">Django</span>',
-            '<span style="color: #336791;">PostgreSQL</span>',
-            '<span style="color: #336791;">MySQL</span>',
-            '<span style="color: #3776ab;">Python</span>',
-            '<span style="color: #ff6b6b;">Computer Vision</span>',
-            '<span style="color: #ff2d20;">Wordpress</span>',
-          ]}
-          typeSpeed={50}
-          backSpeed={10}
-          backDelay={2000}
-          loop
-          className="text-blue-600 font-semibold"
-        />
+          {/* Profile photo — mobile only */}
+          <div className="flex lg:hidden mb-6">
+            <Image
+              src={assets.profile_img}
+              alt="Jacob Barcelona"
+              className="w-20 h-20 rounded-full object-cover border-2 border-border"
+            />
+          </div>
+
+          <p className="text-accent text-sm tracking-[0.2em] uppercase font-semibold mb-4">
+            Hi, I&apos;m
+          </p>
+
+          <h1 className="font-bold leading-[0.95] tracking-tight text-text mb-1"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 5.25rem)" }}>
+            Jacob
+          </h1>
+          <h1 className="font-bold leading-[0.95] tracking-tight mb-6"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 5.25rem)" }}>
+            Barcelona
+          </h1>
+
+          <p className="text-base sm:text-lg text-muted mb-5">
+            I build with{" "}
+            <ReactTyped
+              strings={[
+                "React Native",
+                "Expo",
+                "Supabase",
+                "HTML, CSS, JS",
+                "Django",
+                "PostgreSQL",
+                "Python",
+                "Computer Vision",
+              ]}
+              typeSpeed={50}
+              backSpeed={15}
+              backDelay={1800}
+              loop
+              className="font-semibold text-text"
+            />
+          </p>
+
+          <p className="text-muted max-w-md mb-8 leading-relaxed text-sm sm:text-base">
+            Software Engineer from Manila, Philippines. I turn ideas into
+            production-ready mobile apps, web platforms, and ML systems.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <a href="#contact"
+              className="px-8 py-3 bg-accent text-white rounded-full font-medium hover:bg-red-600 transition-colors duration-200">
+              Contact Me
+            </a>
+            <a href="/Barcelona-Resume.pdf" download
+              className="px-8 py-3 border border-border text-text rounded-full font-medium hover:border-accent hover:text-accent transition-colors duration-200">
+              Resume ↓
+            </a>
+          </div>
+        </div>
+
+        {/* ── Right — contained portrait card ── */}
+        <div className="hidden lg:flex items-center justify-end">
+          <div className="relative w-72 xl:w-80 aspect-[3/4] rounded-3xl overflow-hidden border border-border shadow-xl">
+            <Image
+              src={assets.user_image}
+              alt="Jacob Barcelona"
+              fill
+              className="object-cover"
+              sizes="320px"
+              priority
+            />
+            <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-accent/0 hover:ring-accent/30 transition-all duration-300" />
+          </div>
+        </div>
       </div>
-
-      <h1 className="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
-        Software Engineer based in Philippines.
-      </h1>
-      
-      <p className="max-w-2xl mx-auto font-Ovo text-sm sm:text-base md:text-lg">
-        I am a Software Engineer from Manila, Philippines with years of
-        experience specializing in Web and Mobile Development, Machine Learning, and creating 
-        innovative solutions from research to production.
-      </p>
-      
-      <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-        <a 
-          href="#contact" 
-          className="flex items-center gap-2 px-10 py-3 border border-white bg-black rounded-full text-white hover:bg-gray-800 transition-colors"
-        >
-          Contact Me{" "}
-          <Image src={assets.right_arrow_white} alt="arrow" className="w-4" />
-        </a>
-        
-        <a
-          href="/Barcelona-Resume.pdf"
-          download
-          className="flex items-center gap-2 px-10 py-3 border rounded-full border-gray-500 hover:bg-gray-100 transition-colors"
-        >
-          My Resume <Image src={assets.download_icon} alt="download" className="w-4" />
-        </a>
-      </div>
-    </div>
+    </section>
   );
-};
-
-export default Header;
+}

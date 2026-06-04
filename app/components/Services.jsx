@@ -1,31 +1,75 @@
-import { assets, serviceData } from "@/assets/assets";
-import Image from "next/image";
+export default function Services() {
+  const stats = [
+    { value: "2+", label: "Years experience" },
+    { value: "13", label: "Projects" },
+    { value: "3",  label: "Industries" },
+  ];
 
-const Services = () => {
+  const services = [
+    {
+      number: "01",
+      title: "Mobile Development",
+      description: "Cross-platform apps with React Native & Expo — from field collection tools to enterprise kiosk systems, shipped to production on iOS and Android.",
+    },
+    {
+      number: "02",
+      title: "Web Development",
+      description: "Full-stack web platforms with React, Next.js, Django, and Supabase. Role-based access, real-time features, and clean deployment pipelines.",
+    },
+    {
+      number: "03",
+      title: "Python & ML",
+      description: "Computer vision systems, OCR pipelines, and ML classifiers built with OpenCV, TensorFlow, and FastAPI — from research to production API.",
+    },
+  ];
+
   return (
-    <div id="services" className="w-full px-[12%] py-10 scroll-mt-20">
-      <div className="flex flex-col justify-center items-center text-center ">
-        <h4 className="text-lg font-Ovo">What I offer</h4>
-        <h2 className="text-5xl font-Ovo mt-2 mb-4">My Services</h2>
-      </div>
-      
-      <ul className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 my-10">
-        {serviceData.map(({ icon, title, description, link }, index) => (
-          <li
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 cursor-pointer flex flex-col items-center text-center hover:bg-blue-50 hover:shadow-md hover:-translate-y-1 duration-300 justify-between"
-            key={index}
-          >
-            <Image src={icon} alt={title} className="w-12 aspect-square" />
-            <h3 className="text-lg my-4 font-semibold text-gray-700">{title}</h3>
-            <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-5">{description}</p>
-            <a href={link} className="text-xs sm:text-sm md:text-base flex items-center gap-2 mt-5 text-blue-600 hover:text-blue-800 transition-colors font-medium">
-              Get Started <Image alt="" src={assets.right_arrow} className="w-4"/> 
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    <section id="services" className="w-full px-6 sm:px-12 xl:px-16 py-16 sm:py-24 scroll-mt-20 border-t border-border">
+      <div className="max-w-6xl mx-auto">
 
-export default Services;
+        {/* Stats strip */}
+        <div className="grid grid-cols-3 gap-px bg-border mb-16 sm:mb-24 rounded-2xl overflow-hidden">
+          {stats.map(({ value, label }) => (
+            <div key={value}
+              className="bg-bg flex flex-col items-center justify-center py-8 sm:py-10 px-3 sm:px-6 text-center">
+              <span className="text-4xl sm:text-6xl font-bold text-accent leading-none mb-2">
+                {value}
+              </span>
+              <span className="text-xs text-muted tracking-wider uppercase leading-relaxed">
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Section heading */}
+        <div className="mb-12">
+          <h2 className="text-4xl sm:text-5xl font-semibold text-text tracking-tight">
+            Services
+          </h2>
+        </div>
+
+        {/* Service list */}
+        <div className="flex flex-col divide-y divide-border">
+          {services.map(({ number, title, description }) => (
+            <div key={number}
+              className="group flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-10 py-8 hover:text-accent transition-colors duration-300">
+              <span className="text-xs text-muted font-mono shrink-0">{number}</span>
+              <h3 className="text-xl sm:text-2xl font-semibold text-text group-hover:text-accent transition-colors duration-300 w-56 shrink-0">
+                {title}
+              </h3>
+              <p className="text-muted text-sm sm:text-base leading-relaxed">
+                {description}
+              </p>
+              <a href="#contact"
+                className="shrink-0 ml-auto text-muted group-hover:text-accent transition-colors duration-300 hidden sm:block">
+                →
+              </a>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

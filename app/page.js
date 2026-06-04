@@ -10,15 +10,15 @@ import Projects from "./components/Projects";
 export default function Home() {
   return (
     <>
-      <Navbar/>
-      {/* Add a main wrapper with padding-top to account for fixed navbar */}
-      <main className="pt-24"> {/* Adjust this value based on your navbar height */}
-        <Header/>
-        <About/>
-        <Services/>
-        <Projects/>
-        <Contact/>
-        <Footer/>
+      <Navbar />
+      {/* pt-20 offsets mobile top bar; lg:pl-16 offsets desktop side rail */}
+      <main className="pt-20 lg:pt-0 lg:pl-16">
+        <Header />
+        <About />
+        <Services />
+        <Projects />
+        <Contact />
+        <Footer />
       </main>
     </>
   );
