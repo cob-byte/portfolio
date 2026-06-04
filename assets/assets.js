@@ -385,12 +385,6 @@ export const projects = [
     category: "Web",
     skills: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma", "Zustand", "Framer Motion"],
     links: [
-      {
-        id: 1,
-        title: "GitHub",
-        link: "https://github.com/cob-byte/wos-hub",
-        icon: "FaGithub"
-      }
     ]
   },
   {
