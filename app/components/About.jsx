@@ -1,4 +1,5 @@
 import { skillsData } from "@/assets/assets";
+import Stats from "./Stats";
 
 export default function About() {
   return (
@@ -34,6 +35,9 @@ export default function About() {
             hobbies into outlets for creativity and growth.
           </p>
         </div>
+
+        {/* Stats — animated count-up */}
+        <Stats />
 
         {/* Skills */}
         <div>

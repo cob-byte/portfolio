@@ -1,10 +1,4 @@
 export default function Services() {
-  const stats = [
-    { value: "2+", label: "Years experience" },
-    { value: "12", label: "Projects" },
-    { value: "3",  label: "Industries" },
-  ];
-
   const services = [
     {
       number: "01",
@@ -26,21 +20,6 @@ export default function Services() {
   return (
     <section id="services" className="w-full px-6 sm:px-12 xl:px-16 py-16 sm:py-24 scroll-mt-20 border-t border-border">
       <div className="max-w-6xl mx-auto">
-
-        {/* Stats strip */}
-        <div className="grid grid-cols-3 gap-px bg-border mb-16 sm:mb-24 rounded-2xl overflow-hidden">
-          {stats.map(({ value, label }) => (
-            <div key={value}
-              className="bg-bg flex flex-col items-center justify-center py-8 sm:py-10 px-3 sm:px-6 text-center">
-              <span className="text-4xl sm:text-6xl font-bold text-accent leading-none mb-2">
-                {value}
-              </span>
-              <span className="text-xs text-muted tracking-wider uppercase leading-relaxed">
-                {label}
-              </span>
-            </div>
-          ))}
-        </div>
 
         {/* Section heading */}
         <div className="mb-12">

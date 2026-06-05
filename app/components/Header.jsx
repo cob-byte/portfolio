@@ -2,11 +2,13 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { ReactTyped } from "react-typed";
+import HeroFlow from "./HeroFlow";
 
 export default function Header() {
   return (
-    <section id="top" className="lg:min-h-screen flex items-center px-6 sm:px-12 xl:px-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-4 pb-12 lg:py-0">
+    <section id="top" className="hero-bg lg:min-h-screen flex items-center px-6 sm:px-12 xl:px-16 overflow-hidden">
+      <HeroFlow />
+      <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-4 pb-12 lg:py-0">
 
         {/* ── Left — text ── */}
         <div className="flex flex-col">
@@ -64,7 +66,7 @@ export default function Header() {
               className="px-8 py-3 bg-accent text-white rounded-full font-medium hover:bg-red-600 transition-colors duration-200">
               Contact Me
             </a>
-            <a href="/Barcelona-Resume.pdf" download
+            <a href="/Jacob-Barcelona-Resume.pdf" download
               className="px-8 py-3 border border-border text-text rounded-full font-medium hover:border-accent hover:text-accent transition-colors duration-200">
               Resume ↓
             </a>

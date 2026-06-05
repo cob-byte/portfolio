@@ -59,8 +59,32 @@ import attendance_main from './projects/attendance/attendance.png';
 import attendance_0 from './projects/attendance/attendance-0.png';
 import attendance_1 from './projects/attendance/attendance-1.png';
 import attendance_2 from './projects/attendance/attendance-2.png';
+import attendance_3 from './projects/attendance/attendance-3.png';
+import attendance_4 from './projects/attendance/attendance-4.png';
+import attendance_5 from './projects/attendance/attendance-5.png';
+import attendance_6 from './projects/attendance/attendance-6.png';
+
+import faceattend_main from './projects/faceattend/faceattend.png';
+import faceattend_0 from './projects/faceattend/faceattend-0.png';
+import faceattend_1 from './projects/faceattend/faceattend-1.png';
+import faceattend_2 from './projects/faceattend/faceattend-2.png';
+import faceattend_3 from './projects/faceattend/faceattend-3.jpg';
+import faceattend_4 from './projects/faceattend/faceattend-4.jpg';
+import faceattend_5 from './projects/faceattend/faceattend-5.png';
+
+import iotcradle_main from './projects/iotcradle/iotcradle.jpg';
+import iotcradle_0 from './projects/iotcradle/iotcradle-0.png';
+import iotcradle_1 from './projects/iotcradle/iotcradle-1.png';
+import iotcradle_2 from './projects/iotcradle/iotcradle-2.png';
+import iotcradle_3 from './projects/iotcradle/iotcradle-3.png';
+import iotcradle_4 from './projects/iotcradle/iotcradle-4.png';
+import iotcradle_5 from './projects/iotcradle/iotcradle-5.png';
 
 import classifier_main from './projects/classifier/classifier.png';
+import classifier_0 from './projects/classifier/classifier-0.png';
+import classifier_1 from './projects/classifier/classifier-1.png';
+import classifier_2 from './projects/classifier/classifier-2.png';
+import classifier_3 from './projects/classifier/classifier-3.png';
 
 import fam_money_main from './projects/fam-money/fam-money.png';
 import fam_money_0 from './projects/fam-money/fam-money-0.png';
@@ -169,11 +193,19 @@ export const projectImages = {
     },
     attendance: {
         main: attendance_main,
-        gallery: [attendance_0, attendance_1, attendance_2]
+        gallery: [attendance_0, attendance_1, attendance_2, attendance_3, attendance_4, attendance_5, attendance_6]
+    },
+    faceattend: {
+        main: faceattend_main,
+        gallery: [faceattend_0, faceattend_1, faceattend_2, faceattend_3, faceattend_4, faceattend_5]
+    },
+    iotcradle: {
+        main: iotcradle_main,
+        gallery: [iotcradle_0, iotcradle_1, iotcradle_2, iotcradle_3, iotcradle_4, iotcradle_5]
     },
     classifier: {
         main: classifier_main,
-        gallery: []
+        gallery: [classifier_0, classifier_1, classifier_2, classifier_3]
     },
     famMoney: {
         main: fam_money_main,
@@ -411,28 +443,34 @@ export const projects = [
     ]
   },
   {
-    id: 7,
-    title: "Betting & Lottery Mobile App",
-    description: "Enterprise-grade React Native app for a betting and lottery operator. Features offline betting with Realm local storage, geofencing for location-restricted access, SMS integration, kiosk mode, technician tracking, and device security checks with discrepancy resolution workflows.",
-    image: projectImages.stl.main,
-    gallery: projectImages.stl.gallery,
-    category: "Mobile",
-    skills: ["React Native", "Expo", "Realm", "Geofencing", "SMS Integration", "Offline Sync"],
+    id: 11,
+    title: "School Attendance Management System",
+    description: "Role-based attendance tracking system for schools with face detection for photo validation. Administrators manage student records and generate reports; students log attendance via a self-service portal backed by JWT auth and email notifications.",
+    image: projectImages.attendance.main,
+    gallery: projectImages.attendance.gallery,
+    category: "Web",
+    skills: ["Django", "React", "PostgreSQL", "Face Detection", "JWT", "Tailwind CSS"],
     links: []
   },
   {
-    id: 8,
-    title: "ReCom - Community Communication App",
-    description: "Sector-based mobile app for barangay communities. Includes user accounts, community voting, virtual transactions for barangay facilities, pasuyo services for physically absent members, and direct access to emergency institutions.",
-    image: projectImages.recom.main,
-    gallery: projectImages.recom.gallery,
-    category: "Mobile",
-    skills: ["Android Studio Java", "Firebase", "Real-time Communication"],
+    id: 10,
+    title: "Family Money Tracker",
+    description: "Financial management app for tracking family income and expenses across multiple members. Includes budget management, categorized expense reports, and a shared transaction ledger so the whole household stays on the same page.",
+    image: projectImages.famMoney.main,
+    gallery: projectImages.famMoney.gallery,
+    category: "Web",
+    skills: ["React", "Node.js", "Firebase Auth", "Firebase Realtime Database"],
     links: [
       {
         id: 1,
+        title: "Live Demo",
+        link: "https://my-family-tracker.up.railway.app",
+        icon: "FaExternalLinkAlt"
+      },
+      {
+        id: 2,
         title: "GitHub",
-        link: "https://github.com/cob-byte/Recom",
+        link: "https://github.com/cob-byte/FamMoneyTracker",
         icon: "FaGithub"
       }
     ]
@@ -461,39 +499,6 @@ export const projects = [
     ]
   },
   {
-    id: 10,
-    title: "Family Money Tracker",
-    description: "Financial management app for tracking family income and expenses across multiple members. Includes budget management, categorized expense reports, and a shared transaction ledger so the whole household stays on the same page.",
-    image: projectImages.famMoney.main,
-    gallery: projectImages.famMoney.gallery,
-    category: "Web",
-    skills: ["React", "Node.js", "Firebase Auth", "Firebase Realtime Database"],
-    links: [
-      {
-        id: 1,
-        title: "Live Demo",
-        link: "https://my-family-tracker.up.railway.app",
-        icon: "FaExternalLinkAlt"
-      },
-      {
-        id: 2,
-        title: "GitHub",
-        link: "https://github.com/cob-byte/FamMoneyTracker",
-        icon: "FaGithub"
-      }
-    ]
-  },
-  {
-    id: 11,
-    title: "School Attendance Management System",
-    description: "Role-based attendance tracking system for schools with face detection for photo validation. Administrators manage student records and generate reports; students log attendance via a self-service portal backed by JWT auth and email notifications.",
-    image: projectImages.attendance.main,
-    gallery: projectImages.attendance.gallery,
-    category: "Web",
-    skills: ["Django", "React", "PostgreSQL", "Face Detection", "JWT", "Tailwind CSS"],
-    links: []
-  },
-  {
     id: 12,
     title: "IMAI Cart Classifier System",
     description: "Product identification system for the IM.AI smart cart using OCR, color, texture, and feature matching with LightGlue. A FastAPI interface handles image upload, dataset management, and real-time barcode classification, while a separate GUI tool manages dataset collection and model training.",
@@ -501,6 +506,53 @@ export const projects = [
     gallery: projectImages.classifier.gallery,
     category: "ML",
     skills: ["Python", "FastAPI", "OpenCV", "LightGlue", "OCR", "Machine Learning"],
+    links: []
+  },
+  {
+    id: 14,
+    title: "IoT Baby Cradle with Computer Vision",
+    description: "Smart baby-monitoring cradle controlled remotely from a Flutter app over a Raspberry Pi. Trained an MTCNN model for infant face and facial-landmark detection to verify a safe sleeping position, and used MediaPipe face mesh and pose detection for automated sleep tracking — with remote rocking control and live monitoring from the mobile app.",
+    image: projectImages.iotcradle.main,
+    gallery: projectImages.iotcradle.gallery,
+    category: "ML",
+    skills: ["Flutter", "Python", "MTCNN", "MediaPipe", "OpenCV", "Raspberry Pi"],
+    links: []
+  },
+  {
+    id: 7,
+    title: "Betting & Lottery Mobile App",
+    description: "Enterprise-grade React Native app for a betting and lottery operator. Features offline betting with Realm local storage, geofencing for location-restricted access, SMS integration, kiosk mode, technician tracking, and device security checks with discrepancy resolution workflows.",
+    image: projectImages.stl.main,
+    gallery: projectImages.stl.gallery,
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Realm", "Geofencing", "SMS Integration", "Offline Sync"],
+    links: []
+  },
+  {
+    id: 8,
+    title: "ReCom - Community Communication App",
+    description: "Sector-based mobile app for barangay communities. Includes user accounts, community voting, virtual transactions for barangay facilities, pasuyo services for physically absent members, and direct access to emergency institutions.",
+    image: projectImages.recom.main,
+    gallery: projectImages.recom.gallery,
+    category: "Mobile",
+    skills: ["Android Studio Java", "Firebase", "Real-time Communication"],
+    links: [
+      {
+        id: 1,
+        title: "GitHub",
+        link: "https://github.com/cob-byte/Recom",
+        icon: "FaGithub"
+      }
+    ]
+  },
+  {
+    id: 13,
+    title: "FaceAttend - Real-Time Face Recognition Attendance",
+    description: "Offline-first Expo tablet app for automated student attendance using real-time, on-device face recognition. Detection, liveness checks, and 512-dim embedding matching all run locally through Vision Camera frame processors and the InspireFace engine — no internet required. Includes a PIN-protected admin panel for enrollment and reports, plus an optional WebSocket mode that syncs enrolments across multiple classroom tablets and streams live attendance to a Next.js monitoring dashboard.",
+    image: projectImages.faceattend.main,
+    gallery: projectImages.faceattend.gallery,
+    category: "Mobile",
+    skills: ["React Native", "Expo", "Vision Camera", "InspireFace", "SQLite", "Drizzle", "Zustand", "WebSocket", "Node.js"],
     links: []
   }
 ];

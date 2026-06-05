@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── Desktop side rail ── */}
-      <nav className="hidden lg:flex fixed left-0 top-0 h-full w-16 flex-col items-center justify-between py-8 z-50 bg-bg border-r border-border">
+      <nav className="hidden lg:flex fixed left-0 top-0 h-full w-16 flex-col items-center justify-between py-8 z-50 bg-surface border-r border-border">
         {/* Logo */}
         <a href="#top" className="shrink-0">
           <Image src={assets.logo} alt="Jacob" className="w-10" />
