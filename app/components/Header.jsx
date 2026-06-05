@@ -2,13 +2,11 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { ReactTyped } from "react-typed";
-import HeroFlow from "./HeroFlow";
 
 export default function Header() {
   return (
     <section id="top" className="hero-bg lg:min-h-screen flex items-center px-6 sm:px-12 xl:px-16 overflow-hidden">
-      <HeroFlow />
-      <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-4 pb-12 lg:py-0">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-4 pb-12 lg:py-0">
 
         {/* ── Left — text ── */}
         <div className="flex flex-col">

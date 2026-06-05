@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const STATS = [
   { value: 2,  suffix: "+", label: "Years of Experience" },
   { value: 12, suffix: "+", label: "Projects Shipped" },
-  { value: 8,  suffix: "+", label: "Industries" },
+  { value: 6,  suffix: "+", label: "Industries" },
 ];
 
 const DURATION = 1400; // ms
