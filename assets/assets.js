@@ -370,8 +370,8 @@ export const skillsData = [
 export const projects = [
   {
     id: 1,
-    title: "Kolekta - Field Lending & Collection App",
-    description: "Production React Native app for field lending agents in the Philippines. Handles the full agent workflow — loan creation, daily collection rounds, GPS route optimization, and allottee management. Distributed as an Android APK with EAS OTA updates and single-flight token refresh for seamless offline-to-online sync.",
+    title: "Field Lending & Collection Platform",
+    description: "Production React Native app for field lending agents in the Philippines, built for a financial services client. Handles the full agent workflow — loan creation, daily collection rounds, GPS route optimization, and beneficiary management. Distributed as an Android APK with EAS OTA updates and offline-to-online sync.",
     image: projectImages.kolekta.main,
     gallery: projectImages.kolekta.gallery,
     category: "Mobile",
@@ -380,8 +380,8 @@ export const projects = [
   },
   {
     id: 2,
-    title: "IMS Payroll Mobile",
-    description: "Mobile payroll app for IMS Philippines Maritime Corp seafarers. Lets crew view payslips, deductions, contributions, and remittances, and manage allottees with percentage or fixed allocation options.",
+    title: "Maritime Payroll Mobile App",
+    description: "Mobile payroll app for seafarers of a maritime crewing company. Lets crew view payslips, deductions, contributions, and remittances, and manage beneficiaries with percentage or fixed allocation options.",
     image: projectImages.ims.main,
     gallery: projectImages.ims.gallery,
     category: "Mobile",
